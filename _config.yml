@@ -5,7 +5,7 @@ relative_permalinks: false
 title:            Sean Purcell
 tagline:          Some of the all of the things
 url:              http://seanp97.com
-paginate:         1
+paginate:         3
 baseurl:          /
 author:
   name:           Sean Purcell
@@ -20,5 +20,7 @@ paginate_path:    /blog/page:num
 pages_list:
   About: '/about'
   Projects: '/projects'
+  Blag: '/blog'
 
 github:           https://github.com/iburinoc
+highlighter:      pygments
