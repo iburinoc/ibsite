@@ -134,3 +134,101 @@ irrelevant number, you calculate it yourself if you want to know.
 Before we can make it faster, we need to figure out what we should actually fix.
 Using Apple's Instruments app, we can see how much time is spent in each method:
 ![Screenshot of Instruments after running the program]({{ site.baseurl }}assets/bno_mul_a1_instruments.png)
+
+Wow.
+94.8% of the program is spent in rmod_words (the modular reduction routine).
+This can definitely be improved.
+Looking at the previous algorithm, you can see that we reduce the product mod n
+every time we add, which is expensive.
+If we only do it once at the end, that one modular reduction will be more
+expensive, but overall it should be cheaper.
+
+{% highlight python %}
+def multiply_mod(a, b, n):
+        r = 0
+        # iterate over each bit of b
+        for i in range(0, log2(b)):
+                # i'th bit of b
+                if b[i] == 1:
+                        r = (r + a << i)
+        # reduce the product modulo n
+        return r % n
+{% endhighlight %}
+
+So how well does this work?
+
+{% highlight bash %}
+spmbp:bn Sean$ time ./a.out
+real    0m2.940s
+user    0m2.866s
+sys     0m0.015s
+{% endhighlight %}
+
+Not bad, not bad at all.
+
+## Further Speedups
+It'd be nice if we could do even better than that though.
+Looking at Instruments, most of the time is still spent doing modular
+reductions.
+To speed this up, I decided to use
+[Barrett reductions](http://en.wikipedia.org/wiki/Barrett_reduction).
+This allows me to do a single division operation for a given modulus, and then
+trade all subsequent modular reductions for two multiplications and a
+subtraction.
+
+After implementing this, let's see how well it works.
+
+{% highlight bash %}
+spmbp:bn Sean$ time ./a.out
+real    0m4.384s
+user    0m4.253s
+sys     0m0.022s
+{% endhighlight %}
+
+Hmm... it's actually slower!
+The reason for this is that my multiplication routine is not faster than
+modular reductions by a significant enough amount to be worth doing two of them
+instead of one modular reduction.
+
+Let's fix that.
+The way I was doing multiplication involved calculating the bitshifted values
+for a over and over again, which involved allocating the memory for it and
+iterating over all of a bitshifting.
+Instead, let's do long multiplication in base 2^64:
+
+{% highlight python %}
+define mul(a, b):
+        r = 0
+        # iterate over each 64 bit word in a
+        for i in range(0, len(a)):
+                carry = 0
+                # iterate over each 64 bit word in b
+                for j in range(0, len(b)):
+                        # multiply the relevant words of a and b and
+                        # add them to the previous value for that word
+                        # in r[i + j] and the carry
+                        product = a[i] * b[j] + r[i + j] + carry
+                        # set the new value for this word to the lower
+                        # 64 bits of product
+                        r[i+j] = product & 0xffffffff
+                        # set the carry to the upper 64 bits
+                        carry = product >> 64
+                r[i + len(b)] = carry
+        return r
+{% endhighlight %}
+
+Alright, now that our multiplication algorithm iterates over words instead of
+bits and isn't moving all sorts of state around, how's performance?
+
+{% highlight bash %}
+spmbp:bn Sean$ time ./a.out
+real    0m0.099s
+user    0m0.093s
+sys     0m0.003s
+{% endhighlight %}
+
+Pretty good.
+
+### Code
+The code described in this post can be found at
+[https://github.com/iburinoc/ibcrypt/tree/master/bn](https://github.com/iburinoc/ibcrypt/tree/master/bn).
