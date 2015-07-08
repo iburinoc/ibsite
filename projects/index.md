@@ -5,6 +5,15 @@ title: Projects
 
 Various programming projects I've created over the years that I am happy with.
 
+[ibchat](https://github.com/iburinoc/ibchat)
+---
+A end-to-end encrypted chat program written in C from scratch using my ibcrypt
+library to provide cryptographic primitives.  It uses a variety of algorithms
+such as RSA, Diffie-Hellman, scrypt, SHA2, CHACHA, and HMAC to provide key
+negotation, secure communication, and untamperable file storage.  Currently
+a work in progress, however when finished I intend to include an ncurses UI
+for it in addition to a standard CLI.
+
 [3D Pacman](https://github.com/iburinoc/3D-Pacman)
 ---
 A 3D recreation of the classic arcade game "Pacman" written in Java.
