@@ -20,6 +20,8 @@ paginate_path:    /blog/page:num
 pages_list:
   About: '/about'
   Projects: '/projects'
+  Resume: '/resume.pdf'
 
 github:           https://github.com/iburinoc
+email:            me@seanp97.com
 highlighter:      pygments

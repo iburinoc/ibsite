@@ -5,6 +5,12 @@ title: Projects
 
 Various programming projects I've created over the years that I am happy with.
 
+[resistora](https://github.com/iburinoc/resistora)
+---
+An Android app that allows you to determine the resistance of resistors by
+aiming your camera at it.  Created for the Tech Retreat 2015 hackathon, where
+it won 2nd place.
+
 [ibchat](https://github.com/iburinoc/ibchat)
 ---
 A end-to-end encrypted chat program written in C from scratch using my ibcrypt

@@ -3,5 +3,4 @@ layout: page
 title: About
 ---
 
-A student who enjoys programming, math, physics, witty webcomics, and rock climbing.
-Not much else to it.
+A Software Engineering student at the University of Waterloo who enjoys programming, math, physics, webcomics, and rock climbing.
