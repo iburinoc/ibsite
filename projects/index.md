@@ -5,6 +5,12 @@ title: Projects
 
 Various programming projects I've created over the years that I am happy with.
 
+[levennames](http://levennames.seanp.xyz)
+---
+A quick webapp put together to find names that are of small levenshtein
+distance to two other names, hence allowing you to determine names that are
+similar to two other names.
+
 [resistora](https://github.com/iburinoc/resistora)
 ---
 An Android app that allows you to determine the resistance of resistors by
