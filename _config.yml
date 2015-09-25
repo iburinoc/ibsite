@@ -3,13 +3,13 @@ relative_permalinks: false
 
 # Setup
 title:            Sean Purcell
-tagline:          Some of the all of the things
-url:              http://seanp97.com
+tagline:          Software Engineer
+url:              http://seanp.xyz
 paginate:         3
 baseurl:          /
 author:
   name:           Sean Purcell
-  email:          seanpurcell97@gmail.com
+  email:          me@seanp.xyz
 
 # Custom vars
 version:          1.0.0
@@ -23,5 +23,5 @@ pages_list:
   Resume: '/resume.pdf'
 
 github:           https://github.com/iburinoc
-email:            me@seanp97.com
+email:            me@seanp.xyz
 highlighter:      pygments
