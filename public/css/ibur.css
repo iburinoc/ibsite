@@ -7,15 +7,16 @@ body {
 
 .masthead a {
 	color: #ecf0f1;
+	color: rgba(255, 255, 255, 0.87);
 }
 
 .masthead small {
 	color: #bdc3c7;
+	color: rgba(255, 255, 255, 0.5);
 }
 
 main {
-	background-color: rgba(176, 190, 197, .8);/*rgba(129, 207, 224,.8);/*rgba(200, 203, 203, 0.8);*/
-	background-color: rgba(178, 223, 219, .8);
+	background-color: rgba(176, 190, 197, .8);
 	padding: 10px 10px 10px 10px;
 	margin-bottom: 30px;
 	border-radius: 15px;
