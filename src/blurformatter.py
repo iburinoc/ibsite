@@ -1,51 +1,49 @@
 """
-	Formats for HTML output with blur
+	Formats for PNG output with blur
 """
 
-from pygments.formatters import HtmlFormatter
-from pygments.token import Token
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
-NOSELECT = '-webkit-user-select: none;' + \
-	'-webkit-touch-callout: none;' + \
-	'-khtml-user-select: none;' + \
-	'-moz-user-select: none;' + \
-	' -ms-user-select: none;' + \
-	'user-select: none;'
-NOOVERFLOW = 'overflow: hidden; text-overflow: clip;'
-MAKEBACKGROUND = 'position: relative; left: 10px; top: 10px;'
+from pygments.formatters import ImageFormatter, JpgImageFormatter
 
-class BlurFormatter(HtmlFormatter):
-	def _create_stylesheet(self):
-		t2c = self.ttype2class = {Token: ''}
-		c2s = self.class2style = {}
-		for ttype, ndef in self.style:
-			name = self._get_css_class(ttype)
-			style = ''
-			style += 'color: rgba(0,0,0,0); '
-			if ndef['color']:
-				style += 'text-shadow: 0px 0px 0.2em #%s; ' % ndef['color']
-			else:
-				style += 'text-shadow: 0px 0px 0.2em #000; '
-			if ndef['bold']:
-				style += 'font-weight: bold; '
-			if ndef['italic']:
-				style += 'font-style: italic; '
-			if ndef['underline']:
-				style += 'text-decoration: underline; '
-			if ndef['bgcolor']:
-				style += 'background-color: #%s; ' % ndef['bgcolor']
-			if ndef['border']:
-				style += 'border: 1px solid #%s; ' % ndef['border']
-			if style:
-				t2c[ttype] = name
-				# save len(ttype) to enable ordering the styles by
-				# hierarchy (necessary for CSS cascading rules!)
-				c2s[name] = (style[:-2], ttype, len(ttype))
+class GaussianBlurRedux(ImageFilter.GaussianBlur):
+	def __init__(self, radius=2):
+		self.radius = radius
 
-	def get_style_defs(self, arg=None):
-		return '.highlight {' + \
-			MAKEBACKGROUND + \
-			NOSELECT + \
-			NOOVERFLOW + \
-			'}\n' + \
-			HtmlFormatter.get_style_defs(self, arg)
+class BlurFormatter(JpgImageFormatter):
+    def __init__(self, **options):
+        radius = options.get('blur_radius', 2)
+        self.im_filter = GaussianBlurRedux(radius=radius)
+        ImageFormatter.__init__(self, **options)
+
+    def format(self, tokensource, outfile):
+        """
+        Format ``tokensource``, an iterable of ``(tokentype, tokenstring)``
+        tuples and write it into ``outfile``.
+
+        This implementation calculates where it should draw each token on the
+        pixmap, then calculates the required pixmap size and draws the items.
+        """
+        self._create_drawables(tokensource)
+        self._draw_line_numbers()
+        im = Image.new(
+            'RGB',
+            self._get_image_size(self.maxcharno, self.maxlineno),
+            self.background_color
+        )
+        self._paint_line_number_bg(im)
+        draw = ImageDraw.Draw(im)
+        # Highlight
+        if self.hl_lines:
+            x = self.image_pad + self.line_number_width - self.line_number_pad + 1
+            recth = self._get_line_height()
+            rectw = im.size[0] - x
+            for linenumber in self.hl_lines:
+                y = self._get_line_y(linenumber - 1)
+                draw.rectangle([(x, y), (x + rectw, y + recth)],
+                               fill=self.hl_color)
+        for pos, value, font, kw in self.drawables:
+            draw.text(pos, value, font=font, **kw)
+	img = im.filter(self.im_filter)
+        img.save(outfile, self.image_format.upper())	
+
