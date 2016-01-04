@@ -13,12 +13,14 @@ if len(sys.argv) < 2:
 app = Flask(__name__)
 
 root_dir = sys.argv[1]
-files = [f for f in os.listdir(root_dir) if ('.jpg' in f or '.png' in f)]
+files = [os.getcwd() + '/' + root_dir + f for f in os.listdir(root_dir)
+		if ('.jpg' in f or '.png' in f)]
 if len(files) == 0:
 	print 'Must be at least one image in dir'
 	sys.exit(1)
 
 print '%d files to select from' % len(files)
+print files
 
 @app.route('/')
 def bgimage():
