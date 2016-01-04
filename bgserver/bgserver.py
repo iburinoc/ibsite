@@ -27,5 +27,5 @@ def bgimage():
 	return send_file(f, mimetype=mimetype)
 
 if __name__ == '__main__':
-	app.run()
+	app.run(port=64156)
 
