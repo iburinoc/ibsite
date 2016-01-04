@@ -1,0 +1,29 @@
+body {
+	background-image: url("out.jpg");
+	background-color: rgb(240, 243, 243);
+	background-repeat: repeat-y;
+	width: 100%;
+}
+
+.masthead a {
+	color: #ecf0f1;
+}
+
+.masthead small {
+	color: #bdc3c7;
+}
+
+main {
+	background-color: rgba(176, 190, 197, .8);/*rgba(129, 207, 224,.8);/*rgba(200, 203, 203, 0.8);*/
+	background-color: rgba(178, 223, 219, .8);
+	padding: 10px 10px 10px 10px;
+	margin-bottom: 30px;
+	border-radius: 15px;
+}
+
+div.header {
+	width: 100%;
+	background-color: #455A64;
+	color:
+}
+

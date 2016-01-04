@@ -5,8 +5,9 @@
 
   <body>
 
-    <div class="container content">
-      <header class="masthead">
+    <div class="content">
+      <div class="header">
+      <header class="masthead container">
         <h3 class="masthead-title">
           <a href="{{ site.baseurl }}" title="Home">{{ site.title }}</a>
           <small>{{ site.tagline }}</small>
@@ -17,11 +18,10 @@
           {% endfor %}
         </h3>
       </header>
+      </div>
 
-      <main>
+      <main class="container">
         {{ content }}
-      </main>
-
       <footer class="footer">
 		<div>
 			<style>
@@ -38,6 +38,8 @@
           &copy; {{ site.author.name }} <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. All rights reserved.
         </small>
       </footer>
+      </main>
+
     </div>
 
   </body>
