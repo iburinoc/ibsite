@@ -22,7 +22,7 @@ if len(files) == 0:
 print '%d files to select from' % len(files)
 print files
 
-@app.route('/')
+@app.route('/<path:path>')
 def bgimage():
 	f = random.choice(files)
 	mimetype = 'image/png' if '.png' in f else 'image/jpeg'
