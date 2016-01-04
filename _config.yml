@@ -5,7 +5,6 @@ relative_permalinks: false
 title:            Sean Purcell
 tagline:          Software Engineer
 url:              http://seanp.xyz
-paginate:         3
 baseurl:          /
 author:
   name:           Sean Purcell
@@ -13,9 +12,6 @@ author:
 
 # Custom vars
 version:          1.0.0
-blogurl:          /blog/
-permalink:        /blog/:year/:month/:day/:title/
-paginate_path:    /blog/page:num
 
 pages_list:
   About: '/about'
@@ -25,3 +21,4 @@ pages_list:
 github:           https://github.com/iburinoc
 email:            me@seanp.xyz
 highlighter:      pygments
+
