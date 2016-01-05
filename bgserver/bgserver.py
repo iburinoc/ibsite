@@ -13,7 +13,7 @@ if len(sys.argv) < 2:
 app = Flask(__name__)
 
 root_dir = sys.argv[1]
-files = [os.getcwd() + '/' + root_dir + f for f in os.listdir(root_dir)
+files = [os.path.join(os.getcwd(), root_dir, f) for f in os.listdir(root_dir)
 		if ('.jpg' in f or '.png' in f)]
 if len(files) == 0:
 	print 'Must be at least one image in dir'
