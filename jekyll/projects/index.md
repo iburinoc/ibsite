@@ -3,15 +3,26 @@ layout: page
 title: Projects
 ---
 
-Various programming projects I've created over the years that I am happy with.
+Various projects I've created over the years that I am happy with.
 
 [ibchat](https://github.com/iburinoc/ibchat)
 ---
 A end-to-end encrypted chat program written in C from scratch using my ibcrypt
 library to provide cryptographic primitives.  It uses a variety of algorithms
 such as RSA, Diffie-Hellman, scrypt, SHA2, CHACHA, and HMAC to provide key
-negotation, secure communication, and untamperable file storage.  Currently
-a work in progress.
+negotation, secure communication, and untamperable file storage.
+Additionally, it features several custom-written network protocols
+and message formats to ensure secure communications without requiring
+trusting the central server, allowing for the advantages of a decentralized
+system without the inherent security risk.
+
+[flightsim](https://github.com/iburinoc/flightsim)
+---
+A flight simulator written in C++ using OpenGL for rendering a 3D environment.
+It generates infinite terrain using simplex noise generation,
+with a pastel-like shading style that makes the terrain nice to look at.
+It has support for using the TI Launchpad board with Orbital Booster Pack shield
+as a joystick for the simulator.
 
 [ibcrypt](https://github.com/iburinoc/ibcrypt)
 ---
@@ -37,6 +48,10 @@ accountability.  Its built on a combination of a java backend talking to the
 Android app, and a Rails webserver to run the webpage.  It was created for
 Hack the North 2015, where it was one of the 10 winning teams.
 
+My primary contribution was the communication between the phones and the
+backend, serializing the frames into an efficient format that could be sent
+over UDP and parsed on the other end for display.
+
 [spass](https://github.com/iburinoc/spass)
 ---
 A command-line based password manager written in C for Unix-based systems
@@ -58,31 +73,11 @@ the original game, the caveat being you can only see forward.
 Written with Andrey Khesin and Dima Paramonov as the summative assignment for
 Grade 12 Computer Science.
 
-[levennames](http://levennames.seanp.xyz)
----
-A quick webapp put together to find names that are of small levenshtein
-distance to two other names, hence allowing you to determine names that are
-similar to two other names.
-
-[Cube](https://github.com/iburinoc/Cube)
----
-The code behind my Grade 12 Robotics project: A rubix's cube solver.
-Contains algorithms to solve the rubix's cube, code to interface
-with the robot (Arduino), and the actual micro-controller code for
-operating the robot's motors (using the Adafruit Motor Shield).
-
-Written with Andrey Khesin and Dima Paramonov
-
 [Risk](https://github.com/iburinoc/risk)
 ---
 The board game Risk implemented in Java.  Contains the ability to play
 with up to 6 players/AI, locally as well as over a network.
-Network communications are over pure sockets,
+Network communications are over pure sockets, with a custom protocol,
 and data is serialized using [protobufs](https://github.com/google/protobuf/).
 
 Written as an assignment for Grade 12 Computer Science.
-
-[mafia](https://github.com/iburinoc/Mafia)
----
-A node.js and AngularJS implementation of the classic party game Mafia.
-Warning: The code is horrendously messy, you have been warned.

@@ -14,11 +14,9 @@ author:
 version:          1.0.0
 
 pages_list:
-  About: '/about'
   Projects: '/projects'
   Resume: '/resume.pdf'
 
 github:           https://github.com/iburinoc
 email:            me@seanp.xyz
 highlighter:      pygments
-
