@@ -5,7 +5,6 @@ import random
 import pygments
 from pygments import lexers, styles
 from pygments.formatters import ImageFormatter
-from PIL import ImageFilter
 
 def main():
 	if len(sys.argv) < 5:
