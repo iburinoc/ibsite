@@ -8,8 +8,8 @@ from pygments.formatters import ImageFormatter
 from PIL import ImageFilter
 
 def main():
-	if len(sys.argv) < 4:
-		print 'python %s <in dir> <out dir> <lines>' % sys.argv[0]
+	if len(sys.argv) < 5:
+		print 'python %s <in dir> <out dir> <num images> <lines>' % sys.argv[0]
 		sys.exit(1)
 
 	style = styles.get_style_by_name('manni')
@@ -19,24 +19,22 @@ def main():
 		"font_name": "Inconsolata",
 		"font_size": 8
 	}
-	formatter = ImageFormatter(**format_opts)
 
 	in_dir = sys.argv[1]
 	out_dir = sys.argv[2]
-	lines = sys.argv[3]
+	num_images = int(sys.argv[3])
+	num_lines = int(sys.argv[4])
 
-	fnames = [
-		(os.path.join(os.getcwd(), in_dir, f),
-		 os.path.join(os.getcwd(), out_dir, f + '.png'))
+	fnames = [os.path.join(os.getcwd(), in_dir, f)
 		 for f in os.listdir(in_dir)]
 
-	for ((inf, outf), i) in zip(fnames, range(len(fnames))):
-		highlight_file(inf, outf, formatter, lines)
+	for i in range(num_images):
+		inf = random.choice(fnames)
+		outf = os.path.join(os.getcwd(), out_dir, str(i) + '.png')
+		formatter = ImageFormatter(**format_opts)
+		highlight_file(inf, outf, formatter, num_lines)
 		print 'formatted %s into %s, %d/%d' % (inf, outf,
-			i+1, len(fnames))
-
-def test_min(a, b):
-	return a if a < b else b
+			i+1, num_images)
 
 def highlight_file(inf, outf, formatter, n):
 	lexer = lexers.get_lexer_for_filename(inf)
@@ -44,14 +42,10 @@ def highlight_file(inf, outf, formatter, n):
 	lines = []
 	with open(inf, 'r') as f:
 		lines = f.readlines()
-	l = len(lines)
-	print(type(len(lines)))
-	print n, len(lines), l, test_min(n, l), min(n, l)
-	n = test_min(n, len(lines))
+	n = min(n, len(lines))
 
 	index = random.randrange(len(lines) - n + 1)
 	flines = lines[index:index+n]
-	print n, index
 	text = ' ' * 160 + '\n' + ''.join(flines)
 
 	formatter.format(lexer.get_tokens(text), outf)
