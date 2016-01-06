@@ -70,14 +70,9 @@ The rendering engine is a ray-caster written from scratch entirely in software.
 The ghost AI, level design, point counts, etc. are all faithfully recreated from
 the original game, the caveat being you can only see forward.
 
-Written with Andrey Khesin and Dima Paramonov as the summative assignment for
-Grade 12 Computer Science.
-
 [Risk](https://github.com/iburinoc/risk)
 ---
 The board game Risk implemented in Java.  Contains the ability to play
 with up to 6 players/AI, locally as well as over a network.
 Network communications are over pure sockets, with a custom protocol,
 and data is serialized using [protobufs](https://github.com/google/protobuf/).
-
-Written as an assignment for Grade 12 Computer Science.
