@@ -23,9 +23,14 @@ To see more of my projects, head to my [projects page](/projects/)
 (or reload this page to see various snippets of my code in the background).
 
 I've also competed and performed well in both in the
-Canadian Computing Olympiad and the ACM International Collegiate Programming
-Contest, and have worked at the Focused Ultrasound Lab at Sunnybrook Hospital
-in Toronto, optimizing scientific simulation software.
+Canadian Computing Olympiad, receiving a Gold Medal and placing in the top five,
+and the ACM International Collegiate Programming,
+placing third at the ECNA regional.
 
-Additionally, I like to rock climb, hike, swim, skate,
+Additionally, I've worked at the Focused Ultrasound Lab at Sunnybrook Hospital
+in Toronto, analyzing parallelized simulation software and using my findings
+to optimize the program for speed, allowing for more efficient focused
+ultrasound research.
+
+Finally, I also like to rock climb, hike, swim, skate,
 and play Zelda games.

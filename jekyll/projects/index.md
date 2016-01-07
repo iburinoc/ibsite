@@ -26,11 +26,12 @@ as a joystick for the simulator.
 
 [ibcrypt](https://github.com/iburinoc/ibcrypt)
 ---
-A work-in-progress cryptographic primitive library written in C.
+A cryptographic primitive library written in C.
 It was written to try my hand at writing cryptographic primitives as well as
 learn C.
 Implements various block ciphers, hash functions, key derivation functions,
-etc., as well as features a half-working bignum implementation.
+etc.,
+as well as features an efficient arbitrary precision arithmetic implementation.
 
 [resistora](https://github.com/iburinoc/resistora)
 ---
@@ -46,11 +47,22 @@ from your phone straight to our webserver.  It allows anyone to easily and
 anonymously record incidents to enable emergency responders and promote
 accountability.  Its built on a combination of a java backend talking to the
 Android app, and a Rails webserver to run the webpage.  It was created for
-Hack the North 2015, where it was one of the 10 winning teams.
+Hack the North 2015, where it was one of the 12 winning teams.
 
 My primary contribution was the communication between the phones and the
 backend, serializing the frames into an efficient format that could be sent
 over UDP and parsed on the other end for display.
+
+[This site](https://github.com/iburinoc/ibsite)
+---
+A static site made using the Jekyll site generator served by NGINX,
+with a dynamic background of snippets of code I wrote from various projects.
+It works with a NGINX configuration indicating that the background
+image file not be cached by the client, and to reverse proxy requests for the
+background image to a [Flask](http://flask.pocoo.org/)
+server that returns a random image, selected
+from a number of images pregenerated with a custom tool working with
+[Pygments](http://pygments.org/).
 
 [spass](https://github.com/iburinoc/spass)
 ---
