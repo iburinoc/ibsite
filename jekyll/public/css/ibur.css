@@ -50,7 +50,8 @@ h1 {
 }
 
 div.main {
-	background-color: rgba(176, 190, 197, .8);
+	background-color: rgb(176, 190, 197);
+	background-color: rgba(176, 190, 197);
 	padding: 10px 10px 10px 10px;
 	margin-bottom: 30px;
 	border-radius: 15px;
