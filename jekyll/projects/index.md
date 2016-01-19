@@ -5,7 +5,7 @@ title: Projects
 
 Various projects I've created over the years that I am happy with.
 
-[ibchat](https://github.com/iburinoc/ibchat)
+[ibchat](https://ibchat.seanp.xyz)
 ---
 A end-to-end encrypted chat program written in C from scratch using my ibcrypt
 library to provide cryptographic primitives.  It uses a variety of algorithms
