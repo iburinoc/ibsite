@@ -21,8 +21,8 @@ system without the inherent security risk.
 A flight simulator written in C++ using OpenGL for rendering a 3D environment.
 It generates infinite terrain using simplex noise generation,
 with a pastel-like shading style that makes the terrain nice to look at.
-I also [ported it to Google Cardboard]
-(https://github.com/iburinoc/flightsim-cardboard) on iOS to use it as VR!
+I also [ported it to iOS](https://github.com/iburinoc/flightsim-cardboard)
+using Google Cardboard to fly around in VR!
 
 [ibcrypt](https://github.com/iburinoc/ibcrypt)
 ---
