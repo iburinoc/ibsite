@@ -21,8 +21,8 @@ system without the inherent security risk.
 A flight simulator written in C++ using OpenGL for rendering a 3D environment.
 It generates infinite terrain using simplex noise generation,
 with a pastel-like shading style that makes the terrain nice to look at.
-It has support for using the TI Launchpad board with Orbital Booster Pack shield
-as a joystick for the simulator.
+I also [ported it to Google Cardboard]
+(https://github.com/iburinoc/flightsim-cardboard) on iOS to use it as VR!
 
 [ibcrypt](https://github.com/iburinoc/ibcrypt)
 ---
