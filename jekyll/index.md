@@ -27,6 +27,12 @@ Canadian Computing Olympiad, receiving a Gold Medal and placing in the top five,
 and the ACM International Collegiate Programming,
 placing third at the ECNA regional.
 
+I spent last summer working at Wish on the infrastructure team, improving
+stability and efficiency, as well as improving monitoring and incident
+resolution.  While at Wish I cut internal network traffic by 50% and
+migrated a multi-hundred million document collection to a new format,
+reducing database load and improving server efficiency.
+
 Additionally, I've worked at the Focused Ultrasound Lab at Sunnybrook Hospital
 in Toronto, analyzing parallelized simulation software and using my findings
 to optimize the program for speed, allowing for more efficient focused
