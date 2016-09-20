@@ -16,6 +16,13 @@ and message formats to ensure secure communications without requiring
 trusting the central server, allowing for the advantages of a decentralized
 system without the inherent security risk.
 
+[gr_trace](https://github.com/iburinoc/gr_trace)
+---
+A realtime ray-tracer that implements gravitational lensing around a
+Schwarzschild black hole.  It's written in Rust, using the Glium library
+for window creation and GL context management, and with the ray tracing written
+in the fragment shader using Runge-Kutta 4 for stable integration.
+
 [flightsim](https://github.com/iburinoc/flightsim)
 ---
 A flight simulator written in C++ using OpenGL for rendering a 3D environment.
@@ -82,9 +89,3 @@ The rendering engine is a ray-caster written from scratch entirely in software.
 The ghost AI, level design, point counts, etc. are all faithfully recreated from
 the original game, the caveat being you can only see forward.
 
-[Risk](https://github.com/iburinoc/risk)
----
-The board game Risk implemented in Java.  Contains the ability to play
-with up to 6 players/AI, locally as well as over a network.
-Network communications are over pure sockets, with a custom protocol,
-and data is serialized using [protobufs](https://github.com/google/protobuf/).
