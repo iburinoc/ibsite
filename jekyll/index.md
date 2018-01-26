@@ -53,5 +53,5 @@ to optimize the program for speed, allowing for more efficient focused
 ultrasound research.
 -->
 
-I also like rock climbing, skating, hiking, swimming,
+I also like my girlfriend, rock climbing, skating, hiking, swimming,
 Zelda games, and Magic: the Gathering.
