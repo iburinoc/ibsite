@@ -11,7 +11,8 @@ studying Software Engineering.
 What I Do
 =========
 I've worked on many projects spanning a range of fields,
-including the [Zstandard compression algorithm](http://zstd.net),
+including the [GAPID graphics debugger](https://github.com/google/gapid),
+the [Zstandard compression algorithm](http://zstd.net),
 cryptography,
 3D rendering,
 games,
@@ -22,6 +23,11 @@ To see more of my projects, head to my [projects page](/projects/)
 (or reload this page to see various snippets of my code in the background).
 
 In the past I've worked at:
+
+- [Google](https://google.com),
+working on [GAPID](https://github.com/google/.gapid).
+I worked on various metrics and statistics tools to help debug Vulkan graphics
+programs.
 
 - [Side Effects Software](https://sidefx.com),
 implementing Optical Flow and Full-Body Inverse Kinematics
@@ -39,19 +45,5 @@ While at Wish I cut internal network traffic by 50%,
 and orchestrated the migration of a billion-row data collection to reduce
 database load and improve efficiency.
 
-<!---
-I spent last summer working at [Wish](https://wish.com) on the infrastructure
-team, improving stability and efficiency, as well as improving monitoring and
-incident resolution.
-While at Wish I cut internal network traffic by 50% and
-migrated a multi-hundred million document collection to a new format,
-reducing database load and improving server efficiency.
-
-Additionally, I've worked at the Focused Ultrasound Lab at Sunnybrook Hospital
-in Toronto, analyzing parallelized simulation software and using my findings
-to optimize the program for speed, allowing for more efficient focused
-ultrasound research.
--->
-
-I also like my girlfriend, rock climbing, skating, hiking, swimming,
+I also like rock climbing, skating, hiking, swimming,
 Zelda games, and Magic: the Gathering.
