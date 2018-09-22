@@ -25,7 +25,7 @@ To see more of my projects, head to my [projects page](/projects/)
 In the past I've worked at:
 
 - [Google](https://google.com),
-working on [GAPID](https://github.com/google/.gapid).
+working on [GAPID](https://github.com/google/gapid).
 I worked on various metrics and statistics tools to help debug Vulkan graphics
 programs.
 
