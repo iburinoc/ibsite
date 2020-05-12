@@ -36,6 +36,11 @@ with a pastel-like shading style that makes the terrain nice to look at.
 I also [ported it to iOS](https://github.com/iburinoc/flightsim-cardboard)
 using Google Cardboard to fly around in VR!
 
+[3ds-gamepad](https://github.com/iburinoc/3ds-gamepad)
+---
+A 3ds Homebrew program and companion apps for Linux and Windows that allow the 3ds
+to be used as a gamepad over wifi, usable with desktop games.
+
 [ibcrypt](https://github.com/iburinoc/ibcrypt)
 ---
 A cryptographic primitive library written in C.
