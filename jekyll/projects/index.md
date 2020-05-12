@@ -5,16 +5,21 @@ title: Projects
 
 Various projects I've created over the years that I am happy with.
 
-[ibchat](https://github.com/iburinoc/ibchat)
+[gbjit](https://github.com/iburinoc/gbjit)
 ---
-An end-to-end encrypted chat program written in C from scratch using my ibcrypt
-library to provide cryptographic primitives.  It uses a variety of algorithms
-such as RSA, Diffie-Hellman, scrypt, SHA2, CHACHA, and HMAC to provide key
-negotation, secure communication, and untamperable file storage.
-Additionally, it features several custom-written network protocols
-and message formats to ensure secure communications without requiring
-trusting the central server, allowing for the advantages of a decentralized
-system without the inherent security risk.
+A WIP GameBoy/GameBoy Colour emulator in Rust, but using just-in-time compilation
+to rewrite the Z80 opcodes as x86_64 assembly, allowing the GameBoy CPU to run as
+native code instead of being interpreted.
+
+[gba-rs](https://github.com/iburinoc/gba-rs)
+---
+A GameBoy Advance emulator written in Rust.
+The CPU implementation was pulled out by [Daniel Prilik](https://prilik.com)
+into its own rust crate [armv4t_emu](https://github.com/daniel5151/armv4t_emu/),
+usable as a generic implementation of the ARMv4T ISA.
+It was later used in a [simulator we wrote for the TS7200](https://github.com/daniel5151/ts7200/),
+used in the CS452 course at the University of Waterloo,
+allowing us to write and debug our kernels from home.
 
 [gr_trace](https://github.com/iburinoc/gr_trace)
 ---
@@ -70,6 +75,17 @@ background image to a [Flask](http://flask.pocoo.org/)
 server that returns a random image, selected
 from a number of images pregenerated with a custom tool working with
 [Pygments](http://pygments.org/).
+
+[ibchat](https://github.com/iburinoc/ibchat)
+---
+An end-to-end encrypted chat program written in C from scratch using my ibcrypt
+library to provide cryptographic primitives.  It uses a variety of algorithms
+such as RSA, Diffie-Hellman, scrypt, SHA2, CHACHA, and HMAC to provide key
+negotation, secure communication, and untamperable file storage.
+Additionally, it features several custom-written network protocols
+and message formats to ensure secure communications without requiring
+trusting the central server, allowing for the advantages of a decentralized
+system without the inherent security risk.
 
 [spass](https://github.com/iburinoc/spass)
 ---
