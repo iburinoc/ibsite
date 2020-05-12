@@ -8,7 +8,7 @@ from pygments.formatters import ImageFormatter
 
 def main():
 	if len(sys.argv) < 5:
-		print 'python %s <in dir> <out dir> <num images> <lines>' % sys.argv[0]
+		print('python %s <in dir> <out dir> <num images> <lines>' % sys.argv[0])
 		sys.exit(1)
 
 	style = styles.get_style_by_name('manni')
@@ -32,8 +32,8 @@ def main():
 		outf = os.path.join(os.getcwd(), out_dir, str(i) + '.png')
 		formatter = ImageFormatter(**format_opts)
 		highlight_file(inf, outf, formatter, num_lines)
-		print 'formatted %s into %s, %d/%d' % (inf, outf,
-			i+1, num_images)
+		print('formatted %s into %s, %d/%d' % (inf, outf,
+			i+1, num_images))
 
 def highlight_file(inf, outf, formatter, n):
 	lexer = lexers.get_lexer_for_filename(inf)
