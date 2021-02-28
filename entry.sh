@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-trap exit TERM
+trap exit TERM INT
 
 [ -d ibsite/ ] || git clone https://github.com/iburinoc/ibsite
 
